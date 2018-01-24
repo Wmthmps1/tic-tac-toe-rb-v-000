@@ -1,3 +1,15 @@
+
+def play(board)
+  while !over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+end
+
 WIN_COMBINATIONS = [
   [0,1,2],   #top row
   [3,4,5],   #middle row
@@ -129,13 +141,3 @@ def winner(board)
   return nil
 end
 
-def play(board)
-  while !over?(board)
-    turn(board)
-  end
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
-    puts "Cat's Game!"
-  end
-end
