@@ -130,11 +130,12 @@ def winner(board)
 end
 
 def play(board)
-  puts "Please enter a number 1-9: "
-  input=gets.strip
-  turn_number=0
-  until over? == true
+  while !over?(board)
     turn(board)
-    turn_number=turn_number+1
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
   end
 end
